@@ -59,8 +59,27 @@ body{
   color: darkred; /* Ajusta según tus preferencias */
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
 
+.card {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
 
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  max-width: 100%;
+  display: block;
+}
 
 
 .accordion {
