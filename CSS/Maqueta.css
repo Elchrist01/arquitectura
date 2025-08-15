@@ -1,0 +1,144 @@
+@charset "utf-8";
+* { 
+	margin: 0;
+ 	padding: 0;
+	box-sizing: border-box;/*para que el padding y los bordes se incluyan dentro del ancho/alto de los elementos, lo que facilita el control de las dimensiones.*/
+	font-family: "Roboto Mono", monospace;
+	color: black;
+}
+body{
+	background-color:gainsboro;
+	transition: background-color 0.5s ease; /* Suaviza el cambio de color */
+	
+}
+.header{
+	display: flex;
+	justify-content: space-between;/* Espacio entre título y menú */
+	align-items: center;/* Alinea los elementos verticalmente */
+	font-weight: 450;
+	margin: 20px;
+	
+}
+               /*Hedader*/
+
+.header .navIntro-links{
+	list-style: none;/*Esta funcion quita las biñetas de la lista*/
+	padding: 10px 0 0 0;/*Espacio entre los links y el titulo*/
+		
+}
+/* Estilos para los enlaces en la introducción */
+.navIntro-links a {
+  text-decoration: none;/* Sin subrayado por defecto */
+  color: black;
+}
+
+
+.header .navBar-links{
+	
+	display: flex; /* Para colocar los elementos de la lista (<li>) en una fila.*/
+	list-style: none;/*Esta funcion quita las biñetas de la lista*/
+	padding: 0; /* Elimina el padding de la lista */
+  	margin: 0; /* Elimina márgenes predeterminados */
+}
+
+.header .navBar-links li{
+	margin: 10px;/* Para dar espacios entre las letras de la barra de navegacion*/
+	
+}
+
+/* Estilos para los enlaces del menú principal */
+.navBar-links a {
+  text-decoration: none;/* Sin subrayado por defecto */
+  color: black;
+}
+
+/* Subrayado solo en los enlaces de la barra de navegación */
+.navBar-links a:hover, 
+.navIntro-links a:hover {
+  text-decoration: underline;
+  color: darkred; /* Ajusta según tus preferencias */
+}
+
+
+
+
+
+.accordion {
+  background-color: whitesmoke;
+  color: #333;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
+}
+
+/* Estilo de cada menú */
+.menu-item {
+  border-bottom: 1px solid #444;
+}
+
+.menu-button {
+  width: 100%;
+  background: none;
+  color: #333;
+  text-align: left;
+  padding: 10px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.menu-button:hover {
+  background-color: #444;
+}
+
+/* Submenú oculto por defecto */
+.submenu {
+  display: none;
+  background-color: #222;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.submenu li a {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  display: block;
+}
+
+.submenu li a:hover {
+  background-color: #444;
+}
+
+/* Adaptación a pantallas grandes */
+@media (min-width: 768px) {
+  .accordion {
+    position: static;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .menu-item {
+    border: none;
+  }
+
+  .menu-button {
+    text-align: center;
+    border: none;
+  }
+
+  .submenu {
+    position: absolute;
+    top: 100%;
+    display: none;
+    flex-direction: column;
+  }
+
+  .menu-item:hover .submenu {
+    display: block;
+  }
+}
