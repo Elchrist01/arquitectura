@@ -88,9 +88,9 @@ body{
   width: 100%;
   display: flex;
   flex-direction: column;
-  position: fixed;
+  position: relative;/* ahora fluye con el contenido */
   bottom: 0;
-  z-index: 1000;
+  margin-top: 2rem;   /* espacio para separarla del contenido */
 }
 
 /* Estilo de cada menú */
