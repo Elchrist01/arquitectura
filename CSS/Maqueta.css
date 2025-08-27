@@ -59,10 +59,14 @@ body{
   color: darkred; /* Ajusta según tus preferencias */
 }
 
+.Img_principal {
+	width: 100px
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 20px;
+ 
 }
 
 .card {
@@ -76,8 +80,13 @@ body{
   transform: translateY(-5px);
 }
 
+.card:hover img {
+  transform: scale(1.05);
+}
 .card img {
-  max-width: 100%;
+  width: 100%;               /* ocupa todo el ancho de la tarjeta */
+  height: 200px;             /* altura fija */
+  object-fit: cover;         /* recorta y centra la imagen */
   display: block;
 }
 
@@ -91,6 +100,31 @@ body{
   position: relative;/* ahora fluye con el contenido */
   bottom: 0;
   margin-top: 2rem;   /* espacio para separarla del contenido */
+  
+}
+#cont {
+  column-count: 3;       /* número de columnas */
+  column-gap: 20px;      /* espacio entre columnas */
+  padding: 20px;
+  background-color: auto; /* color de fondo estilo experimental */
+  position: relative;	
+}
+
+#cont img {
+  width: 100%;
+  margin-bottom: 20px;
+  display: block;
+  break-inside: avoid;   /* evita que se corten entre columnas */
+  transition: transform 0.3s;
+}
+
+#cont img:nth-child(1) { top: 50px; left: 100px; width: 250px; }
+#cont img:nth-child(2) { top: 200px; left: 400px; width: 200px; }
+#cont img:nth-child(3) { top: 450px; left: 180px; width: 300px; }
+#cont img:nth-child(4) { top: 600px; left: 500px; width: 220px; }
+
+#cont img:hover {
+  transform: scale(1.05);
 }
 
 /* Estilo de cada menú */
@@ -110,7 +144,7 @@ body{
 }
 
 .menu-button:hover {
-  background-color: #444;
+  background-color: white;
 }
 
 /* Submenú oculto por defecto */
